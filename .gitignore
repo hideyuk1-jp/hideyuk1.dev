@@ -46,6 +46,12 @@ psd
 thumb
 sketch
 
+### Next.js ###
+.next
+out
+.env
+.env.build
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
