@@ -49,6 +49,8 @@ sketch
 ### Next.js ###
 .next
 out
+.env
+.env.build
 
 ### VisualStudioCode ###
 .vscode/*
