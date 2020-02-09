@@ -4,7 +4,7 @@ import { ServerStyleSheets } from '@material-ui/core/styles';
 import theme from '../components/theme';
 
 export default class MyDocument extends Document {
-    render() {
+  render() {
     return (
       <html lang="en">
         <Head>
@@ -13,7 +13,7 @@ export default class MyDocument extends Document {
           {/* Google Font */}
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&display=swap"
+            href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,500,700&display=swap"
           />
         </Head>
         <body>

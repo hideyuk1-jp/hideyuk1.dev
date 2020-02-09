@@ -1,42 +1,14 @@
 import React from 'react';
 import { NextPage } from 'next';
-import PropTypes from 'prop-types';
-import Header from '../components/Header';
+import Layout from '../components/Layout';
+import Hero from '../components/Hero';
 
-interface Props {
-  title: string;
-  description: string;
-  twitterUrl: string;
-  githubUrl: string;
-}
-
-const Index: NextPage<Props> = props => {
-  const { title, description, twitterUrl, githubUrl } = props;
-
+const Index: NextPage = () => {
   return (
-    <>
-      <Header
-        siteTitle={title}
-        siteDescription={description}
-        twitterUrl={twitterUrl}
-        githubUrl={githubUrl}
-      />
-    </>
+    <Layout>
+      <Hero />
+    </Layout>
   );
-};
-
-Index.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  twitterUrl: PropTypes.string.isRequired,
-  githubUrl: PropTypes.string.isRequired,
-};
-
-Index.getInitialProps = async () => {
-  const configData = await import(`../data/config.json`);
-  return {
-    ...configData,
-  };
 };
 
 export default Index;

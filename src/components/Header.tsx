@@ -20,30 +20,32 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       boxShadow: 'none',
-      background: '#fff',
-      color: '#454545',
-      borderBottom: '1px solid #eaeaea',
+      background: theme.palette.background.paper,
+      color: theme.palette.text.primary,
     },
     container: {},
     toolbar: {
       padding: '0',
       display: 'grid',
-      gridTemplateColumns: 'auto 1fr auto',
+      gridTemplate: '"title . nav" auto / auto 1fr auto',
     },
-    flexGrow: {
-      flexGrow: 1,
+    nav: {
+      gridArea: 'nav',
     },
     title: {
-      color: '#454545',
-      fontSize: '32px',
-      fontWeight: 700,
-      textDecoration: 'none',
-      '&:hover': {
+      gridArea: 'title',
+      '& > a': {
+        color: theme.palette.text.primary,
+        fontSize: '32px',
+        fontWeight: 700,
         textDecoration: 'none',
+        '&:hover': {
+          textDecoration: 'none',
+        },
       },
     },
     accent: {
-      color: '#4bc0c8',
+      color: theme.palette.primary.main,
     },
     small: {
       fontSize: '12.8px',
@@ -77,7 +79,7 @@ interface Props {
   githubUrl: string;
 }
 
-export default function Header(props: Props) {
+const Header: React.FunctionComponent<Props> = props => {
   const classes = useStyles();
 
   const [state, setState] = React.useState({
@@ -134,49 +136,48 @@ export default function Header(props: Props) {
   );
 
   return (
-    <>
-      <AppBar className={classes.root}>
-        <Container maxWidth="md" className={classes.container}>
-          <Toolbar className={classes.toolbar}>
-            <Typography component="h1" variant="h6" noWrap>
-              <Tooltip title="HOME">
-                <Link className={classes.title} href="/">
-                  hideyuk<span className={classes.accent}>1</span>
-                  <span className={classes.small}>.com</span>
-                </Link>
-              </Tooltip>
-            </Typography>
-            <div className={classes.flexGrow} />
-            <div>
-              <Hidden smDown>
-                <Button href="/about">About</Button>
-                <Button href="/portfolio">PortFolio</Button>
-                <Button href="https://hideyuk1.com" target="_blank" rel="noopener">
-                  Blog
-                </Button>
-              </Hidden>
-              <Tooltip title="Twitter">
-                <IconButton color="inherit" href={twitterUrl} target="_blank" rel="noopener">
-                  <TwitterIcon />
-                </IconButton>
-              </Tooltip>
-              <Tooltip title="GitHub">
-                <IconButton color="inherit" href={githubUrl} target="_blank" rel="noopener">
-                  <GitHubIcon />
-                </IconButton>
-              </Tooltip>
-              <Hidden mdUp>
-                <IconButton color="inherit" edge="end" onClick={toggleDrawer('right', true)}>
-                  <MenuIcon />
-                </IconButton>
-                <Drawer anchor="right" open={state.right} onClose={toggleDrawer('right', false)}>
-                  {sideList('right')}
-                </Drawer>
-              </Hidden>
-            </div>
-          </Toolbar>
-        </Container>
-      </AppBar>
-    </>
+    <AppBar position="static" className={classes.root}>
+      <Container maxWidth="md" className={classes.container}>
+        <Toolbar className={classes.toolbar}>
+          <Typography component="h1" variant="h6" className={classes.title} noWrap>
+            <Tooltip title="ホーム" arrow>
+              <Link href="/">
+                hideyuk<span className={classes.accent}>1</span>
+                <span className={classes.small}>.com</span>
+              </Link>
+            </Tooltip>
+          </Typography>
+          <nav className={classes.nav}>
+            <Hidden smDown>
+              <Button href="/about">プロフィール</Button>
+              <Button href="/portfolio">制作物</Button>
+              <Button href="https://hideyuk1.com" target="_blank" rel="noopener">
+                ブログ
+              </Button>
+            </Hidden>
+            <Tooltip title="Twitter" arrow>
+              <IconButton color="inherit" href={twitterUrl} target="_blank" rel="noopener">
+                <TwitterIcon />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="GitHub" arrow>
+              <IconButton color="inherit" href={githubUrl} target="_blank" rel="noopener">
+                <GitHubIcon />
+              </IconButton>
+            </Tooltip>
+            <Hidden mdUp>
+              <IconButton color="inherit" edge="end" onClick={toggleDrawer('right', true)}>
+                <MenuIcon />
+              </IconButton>
+              <Drawer anchor="right" open={state.right} onClose={toggleDrawer('right', false)}>
+                {sideList('right')}
+              </Drawer>
+            </Hidden>
+          </nav>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
-}
+};
+
+export default Header;
