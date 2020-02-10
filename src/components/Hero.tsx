@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     heroText: {
       textAlign: 'center',
-      '& > h3:first-child': {
+      '& > h3': {
         fontWeight: 700,
       },
     },
@@ -34,9 +34,6 @@ const useStyles = makeStyles((theme: Theme) =>
       '& > *, & > *:hover': {
         boxShadow: 'none',
         margin: theme.spacing(1),
-      },
-      '& > *:first-child': {
-        color: '#fff',
       },
     },
   }),
@@ -59,11 +56,16 @@ const Hero: React.FunctionComponent = () => {
           */}
 
           <div className={classes.heroText}>
-            <Typography variant="h3">Hi, I&apos;m a Web Developer!</Typography>
+            <Typography component="div" variant="h3">
+              Hi, I&apos;m hideyuki
+            </Typography>
+            <Typography component="div" variant="h5">
+              Full Stack Web Developer
+            </Typography>
             <p>
-              1986年生まれ。32才の時に会計業界からWebの世界にバックエンドエンジニアとして飛び込みました。
+              32才の時に会計業界からWebの世界にバックエンドエンジニアとして飛び込みました。
               <br />
-              今後はバックエンドだけでなく、フロントもインフラもいけちゃうフルスタックエンジニアを目指しています。
+              バックエンドだけでなく、フロントエンドもインフラもいけちゃうフルスタックエンジニアを目指しています。
             </p>
             <div className={classes.chips}>
               <Chip size="small" label="Laravel" />
@@ -72,8 +74,8 @@ const Hero: React.FunctionComponent = () => {
               <Chip size="small" label="AWS" />
             </div>
             <div className={classes.buttons}>
-              <Button variant="contained" color="primary" href="/about">
-                もっと詳しく
+              <Button variant="outlined" color="primary" href="/about">
+                制作物を見る
               </Button>
               <Button variant="outlined" color="primary" href="/contact">
                 メッセージを送る

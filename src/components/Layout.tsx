@@ -23,12 +23,14 @@ const Layout: React.FunctionComponent<Props> = ({
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
       <div className="wrapper">
-        <Header
-          siteTitle={title}
-          siteDescription={description}
-          twitterUrl={twitterUrl}
-          githubUrl={githubUrl}
-        />
+        <header className="header">
+          <Header
+            siteTitle={title}
+            siteDescription={description}
+            twitterUrl={twitterUrl}
+            githubUrl={githubUrl}
+          />
+        </header>
         <main className="main">{children}</main>
       </div>
     </>
