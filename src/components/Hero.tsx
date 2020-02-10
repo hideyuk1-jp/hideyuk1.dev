@@ -63,6 +63,8 @@ const Hero: React.FunctionComponent = () => {
               Full Stack Web Developer
             </Typography>
             <p>
+              このポートフォリオサイトは作成途中です。
+              <br />
               32才の時に会計業界からWebの世界にバックエンドエンジニアとして飛び込みました。
               <br />
               バックエンドだけでなく、フロントエンドもインフラもいけちゃうフルスタックエンジニアを目指しています。
