@@ -3,12 +3,10 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import Chip from '@material-ui/core/Chip';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     hero: {
-      padding: `${theme.spacing(5)}px ${theme.spacing(2)}px`,
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -18,17 +16,11 @@ const useStyles = makeStyles((theme: Theme) =>
       height: '280px',
       marginBottom: theme.spacing(5),
     },
+    heroTitle: {
+      fontWeight: 700,
+    },
     heroText: {
       textAlign: 'center',
-      '& > h3': {
-        fontWeight: 700,
-      },
-    },
-    chips: {
-      marginBottom: theme.spacing(5),
-      '& > *': {
-        margin: `0 ${theme.spacing(0.5)}px`,
-      },
     },
     buttons: {
       '& > *, & > *:hover': {
@@ -56,11 +48,8 @@ const Hero: React.FunctionComponent = () => {
           */}
 
           <div className={classes.heroText}>
-            <Typography component="div" variant="h3">
-              Hi, I&apos;m hideyuki
-            </Typography>
-            <Typography component="div" variant="h5">
-              Full Stack Web Developer
+            <Typography component="div" variant="h4" className={classes.heroTitle}>
+              楽するための努力は惜しまない
             </Typography>
             <p>
               このポートフォリオサイトは作成途中です。
@@ -69,12 +58,6 @@ const Hero: React.FunctionComponent = () => {
               <br />
               バックエンドだけでなく、フロントエンドもインフラもいけちゃうフルスタックエンジニアを目指しています。
             </p>
-            <div className={classes.chips}>
-              <Chip size="small" label="Laravel" />
-              <Chip size="small" label="React" />
-              <Chip size="small" label="Next.js" />
-              <Chip size="small" label="AWS" />
-            </div>
             <div className={classes.buttons}>
               <Button variant="outlined" color="primary" href="/about">
                 制作物を見る

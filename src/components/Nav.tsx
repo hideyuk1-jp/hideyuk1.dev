@@ -23,9 +23,11 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       '& > a': {
         position: 'relative',
+        transition: 'all 0.3s ease-in-out',
         height: '100%',
         color: 'inherit',
         padding: `0 ${theme.spacing(2)}px`,
+        fontWeight: 700,
         '&:after': {
           content: '" "',
           position: 'absolute',
@@ -41,6 +43,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         '&:hover': {
           textDecoration: 'none',
+          color: theme.palette.primary.main,
           '&:after': {
             transform: 'scale(1, 1)',
           },
@@ -68,6 +71,7 @@ const useStyles = makeStyles((theme: Theme) =>
         width: '100%',
         padding: `${theme.spacing(2)}px ${theme.spacing(5)}px`,
         color: 'inherit',
+        fontWeight: 700,
         '&:hover': {
           textDecoration: 'none',
           background: theme.palette.background.default,
@@ -75,6 +79,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       '& > $socialLinks': {
         textAlign: 'center',
+        padding: theme.spacing(2),
       },
     },
     socialLinks: {},
@@ -125,12 +130,15 @@ const Nav: React.FunctionComponent<Props> = props => {
     },
     {
       attributes: {
-        /* TODO: ブログ移行したら修正 */
-        href: 'https://hideyuk1.com',
-        target: '_blank',
-        rel: 'noopener',
+        href: '/blog',
       },
       text: 'Blog',
+    },
+    {
+      attributes: {
+        href: '/contact',
+      },
+      text: 'Contact',
     },
   ];
 

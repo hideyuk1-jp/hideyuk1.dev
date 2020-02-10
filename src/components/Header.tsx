@@ -4,15 +4,17 @@ import { AppBar, Toolbar } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
-import Tooltip from '@material-ui/core/Tooltip';
 import Nav from './Nav';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     navbar: {
       boxShadow: 'none',
-      background: theme.palette.background.paper,
-      color: theme.palette.text.primary,
+      background: '#454545',
+      color: '#eaeaea',
+      '& a': {
+        color: '#eaeaea',
+      },
     },
     container: {},
     toolbar: {
@@ -23,8 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       gridArea: 'title',
       '& > a': {
-        color: theme.palette.text.primary,
-        fontSize: '32px',
+        fontSize: '28px',
         fontWeight: 700,
         textDecoration: 'none',
         '&:hover': {
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme: Theme) =>
       color: theme.palette.primary.main,
     },
     small: {
-      fontSize: '12.8px',
+      fontSize: '0.4em',
     },
   }),
 );
@@ -54,16 +55,14 @@ const Header: React.FunctionComponent<Props> = props => {
   const { twitterUrl, githubUrl } = props;
 
   return (
-    <AppBar component="div" position="static" className={classes.navbar}>
+    <AppBar position="sticky" className={classes.navbar}>
       <Container maxWidth="md" className={classes.container}>
         <Toolbar className={classes.toolbar}>
           <Typography component="h1" variant="h6" className={classes.title} noWrap>
-            <Tooltip title="ホーム" arrow>
-              <Link href="/">
-                hideyuk<span className={classes.accent}>1</span>
-                <span className={classes.small}>.com</span>
-              </Link>
-            </Tooltip>
+            <Link href="/">
+              hideyuk<span className={classes.accent}>1</span>
+              <span className={classes.small}>.com</span>
+            </Link>
           </Typography>
           <Nav twitterUrl={twitterUrl} githubUrl={githubUrl} />
         </Toolbar>
