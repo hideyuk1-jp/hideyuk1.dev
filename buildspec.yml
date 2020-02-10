@@ -13,8 +13,8 @@ phases:
       - npm -v
       - node -v
       - npm install
-      - npm build
-      - npm export
+      - npm run build
+      - npm run export
   post_build:
     commands:
       - echo Build completed on `date`
