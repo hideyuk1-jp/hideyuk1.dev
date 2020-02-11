@@ -1,4 +1,6 @@
 import React from 'react';
+import { useRouter } from 'next/router';
+import clsx from 'clsx';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import { Hidden, IconButton } from '@material-ui/core';
 import Drawer from '@material-ui/core/Drawer';
@@ -35,13 +37,12 @@ const useStyles = makeStyles((theme: Theme) =>
           left: 0,
           height: theme.spacing(0.5),
           width: '100%',
-          borderRadius: theme.spacing(0.25),
           background: theme.palette.primary.main,
           transition: 'transform 0.3s ease-in-out',
           transform: 'scale(0, 1)',
           transformOrigin: 'center top',
         },
-        '&:hover': {
+        '&:hover, &.selected': {
           textDecoration: 'none',
           color: theme.palette.primary.main,
           '&:after': {
@@ -100,6 +101,8 @@ const Nav: React.FunctionComponent<Props> = props => {
 
   const { twitterUrl, githubUrl } = props;
 
+  const { pathname, route } = useRouter();
+
   type DrawerSide = 'right';
   const toggleDrawer = (side: DrawerSide, open: boolean) => (
     event: React.KeyboardEvent | React.MouseEvent,
@@ -118,13 +121,13 @@ const Nav: React.FunctionComponent<Props> = props => {
   const links: { attributes: { href: string; target?: string; rel?: string }; text: string }[] = [
     {
       attributes: {
-        href: '/about',
+        href: '/',
       },
       text: 'About',
     },
     {
       attributes: {
-        href: '/portfolio',
+        href: '/work',
       },
       text: 'Portfolio',
     },
@@ -145,7 +148,15 @@ const Nav: React.FunctionComponent<Props> = props => {
   const menuLinks = () => (
     <>
       {links.map(link => (
-        <Link {...link.attributes} key={link.attributes.href}>
+        <Link
+          {...link.attributes}
+          key={link.attributes.href}
+          className={clsx({
+            selected:
+              (link.attributes.href === '/' && pathname === '/') ||
+              (link.attributes.href !== '/' && route.startsWith(link.attributes.href)),
+          })}
+        >
           {link.text}
         </Link>
       ))}
