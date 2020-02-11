@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
           flex: 1,
           '& > .sectionTitle': {
             fontWeight: 700,
+            letterSpacing: theme.spacing(0.5),
           },
         },
         '& > .sectionBody': {
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme: Theme) =>
         display: 'inline-block',
         color: '#eaeaea',
         background: theme.palette.primary.main,
-        margin: `-${theme.spacing(2)}px 0 ${theme.spacing(2)}px`,
+        margin: `-${theme.spacing(2)}px 0 ${theme.spacing(4)}px`,
         padding: theme.spacing(2),
         borderRadius: theme.spacing(0.5),
         boxShadow: '0 4px 20px 0 rgba(0, 0, 0,0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
@@ -50,13 +51,13 @@ const useStyles = makeStyles((theme: Theme) =>
           lineHeight: 1.0,
         },
       },
-      '& > body > dl': {
+      '& > .body > dl': {
         margin: `0 0 ${theme.spacing(2)}px`,
         '& > dt': {
-          fontWeight: 700,
+          color: theme.palette.text.secondary,
         },
         '& > dd': {
-          paddingTop: theme.spacing(2),
+          paddingTop: theme.spacing(0.5),
         },
       },
       '& .ul': {
@@ -100,11 +101,13 @@ const useStyles = makeStyles((theme: Theme) =>
       '& p': {
         margin: `0`,
       },
-      '& .title, & .during': {
-        marginBottom: theme.spacing(2),
+      '& .during': {
+        color: theme.palette.text.secondary,
+        marginBottom: theme.spacing(0.5),
       },
       '& .title': {
         fontWeight: 700,
+        marginBottom: theme.spacing(2),
       },
       '& .body': {
         background: theme.palette.background.paper,
@@ -184,17 +187,17 @@ const Profile: React.FunctionComponent = () => {
                   <dt>資格・認定</dt>
                   <dd>
                     <ul className="ul">
-                      <li>AWS認定SysOpsアドミニストレーター - アソシエイト（2020-01）</li>
-                      <li>AWS認定デベロッパー - アソシエイト（2019-12）</li>
-                      <li>AWS認定ソリューションアーキテクト - アソシエイト（2019-10）</li>
-                      <li>Python3エンジニア認定データ分析試験（2019−09）</li>
-                      <li>AWS認定クラウドプラクティショナー（2019−07）</li>
-                      <li>Python3エンジニア認定基礎試験（2019-03）</li>
-                      <li>日商簿記2級（2019-03）</li>
-                      <li>Excel VBA Standard（2019-01）</li>
-                      <li>ほめ達検定3級、2級（2018−12）</li>
-                      <li>Microsoft Office Specialist 2013 Master（2017-12）</li>
-                      <li>応用情報技術者（2014-12）</li>
+                      <li>AWS認定SysOpsアドミニストレーター - アソシエイト（2020.01）</li>
+                      <li>AWS認定デベロッパー - アソシエイト（2019.12）</li>
+                      <li>AWS認定ソリューションアーキテクト - アソシエイト（2019.10）</li>
+                      <li>Python3エンジニア認定データ分析試験（2019.09）</li>
+                      <li>AWS認定クラウドプラクティショナー（2019.07）</li>
+                      <li>Python3エンジニア認定基礎試験（2019.03）</li>
+                      <li>日商簿記2級（2019.03）</li>
+                      <li>Excel VBA Standard（2019.01）</li>
+                      <li>ほめ達検定3級、2級（2018.12）</li>
+                      <li>Microsoft Office Specialist 2013 Master（2017.12）</li>
+                      <li>応用情報技術者（2014.12）</li>
                     </ul>
                   </dd>
                 </dl>
