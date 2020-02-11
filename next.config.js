@@ -2,7 +2,10 @@ module.exports = {
   exportTrailingSlash: true,
   exportPathMap: function() {
     return {
-      '/': { page: '/' }
+      '/': { page: '/' },
+      '/work': { page: '/work' },
+      '/blog': { page: '/blog' },
+      '/contact': { page: '/contact' },
     };
-  }
+  },
 };
