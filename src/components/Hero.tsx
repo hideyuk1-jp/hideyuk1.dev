@@ -18,9 +18,13 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     heroTitle: {
       fontWeight: 700,
+      letterSpacing: theme.spacing(0.5),
     },
     heroText: {
       textAlign: 'center',
+      '& > p': {
+        color: theme.palette.text.secondary,
+      },
     },
     buttons: {
       '& > *, & > *:hover': {
