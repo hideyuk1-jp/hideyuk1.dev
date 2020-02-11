@@ -2,75 +2,89 @@ import React from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Typography } from '@material-ui/core';
+import clsx from 'clsx';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     section: {
-      '& > *': {
+      '& > .container': {
         display: 'flex',
         flexDirection: 'row',
         [theme.breakpoints.down('sm')]: {
           flexDirection: 'column',
-          '& > $sectionHeader': {
+          '& > .sectionHeader': {
             paddingBottom: theme.spacing(4),
           },
         },
+        '& > .sectionHeader': {
+          flex: 1,
+          '& > .sectionTitle': {
+            fontWeight: 700,
+          },
+        },
+        '& > .sectionBody': {
+          flex: 2,
+        },
       },
     },
-    sectionHeader: {
-      flex: 1,
-    },
-    sectionTitle: {
-      fontWeight: 700,
-    },
-    sectionBody: {
-      flex: 1,
-    },
-    profileTitle: {
-      fontWeight: 700,
-      fontSize: '1.6rem',
-    },
-    profileJob: {
-      marginBottom: theme.spacing(2),
-    },
-    profileDesc: {
-      marginBottom: theme.spacing(5),
-    },
     profile: {
-      '& dl': {
+      background: theme.palette.background.paper,
+      marginTop: theme.spacing(2),
+      padding: `0 ${theme.spacing(2)}px ${theme.spacing(2)}px`,
+      borderRadius: theme.spacing(1),
+      boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.1)',
+      '& > .header': {
+        display: 'inline-block',
+        color: '#eaeaea',
+        background: theme.palette.primary.main,
+        margin: `-${theme.spacing(2)}px 0 ${theme.spacing(2)}px`,
+        padding: theme.spacing(2),
+        borderRadius: theme.spacing(0.5),
+        boxShadow: '0 4px 20px 0 rgba(0, 0, 0,0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
+        '& > .title': {
+          paddingBottom: theme.spacing(0.5),
+          fontWeight: 700,
+          fontSize: '1.6rem',
+          lineHeight: 1.0,
+        },
+        '& > .job': {
+          lineHeight: 1.0,
+        },
+      },
+      '& > body > dl': {
         margin: `0 0 ${theme.spacing(2)}px`,
         '& > dt': {
           fontWeight: 700,
         },
         '& > dd': {
           paddingTop: theme.spacing(2),
-          '& $ul': {
-            listStyle: 'none',
-            margin: 0,
-            padding: 0,
-            display: 'table',
-            '& > li': {
-              display: 'table-row',
-              '&:after': {
-                content: '""',
-                display: 'block',
-              },
-              '&:before': {
-                content: '"-"',
-                display: 'table-cell',
-                paddingRight: '0.4em',
-              },
-            },
+        },
+      },
+      '& .ul': {
+        listStyle: 'none',
+        margin: 0,
+        padding: 0,
+        display: 'table',
+        '& > li': {
+          display: 'table-row',
+          '&:after': {
+            content: '""',
+            display: 'block',
+          },
+          '&:before': {
+            content: '"-"',
+            display: 'table-cell',
+            paddingRight: '0.4em',
           },
         },
       },
     },
-    ul: {},
     timeline: {
       position: 'relative',
       padding: `${theme.spacing(2)}px 0 ${theme.spacing(2)}px ${theme.spacing(4)}px`,
       '& .entry': {
         position: 'relative',
+        marginBottom: theme.spacing(4),
         '&:after': {
           content: '""',
           position: 'absolute',
@@ -79,15 +93,25 @@ const useStyles = makeStyles((theme: Theme) =>
           height: theme.spacing(2),
           width: theme.spacing(2),
           background: theme.palette.primary.main,
+          boxShadow: '0 4px 20px 0 rgba(0, 0, 0,0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
           borderRadius: '50%',
           zIndex: 2,
         },
       },
       '& p': {
-        margin: `0 0 ${theme.spacing(2)}px 0`,
+        margin: `0`,
+      },
+      '& .title, & .during': {
+        marginBottom: theme.spacing(2),
       },
       '& .title': {
         fontWeight: 700,
+      },
+      '& .body': {
+        background: theme.palette.background.paper,
+        boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.1)',
+        borderRadius: theme.spacing(1),
+        padding: theme.spacing(2),
       },
       '&:after': {
         content: '""',
@@ -96,7 +120,7 @@ const useStyles = makeStyles((theme: Theme) =>
         left: theme.spacing(0.75),
         height: '100%',
         width: theme.spacing(0.5),
-        background: '#ccc',
+        background: '#eaeaea',
         borderRadius: theme.spacing(0.25),
         zIndex: 1,
       },
@@ -128,64 +152,70 @@ const Profile: React.FunctionComponent = () => {
   return (
     <>
       <section className={classes.section}>
-        <Container maxWidth="md" className={classes.profile}>
-          <div className={classes.sectionHeader}>
-            <Typography variant="h4" className={classes.sectionTitle}>
+        <Container maxWidth="md" className="container">
+          <div className="sectionHeader">
+            <Typography variant="h4" className="sectionTitle">
               About me
             </Typography>
           </div>
-          <div className={classes.sectionBody}>
-            <div className={classes.profileTitle}>Hideyuki Hashimoto</div>
-            <div className={classes.profileJob}>Web Developer & Designer</div>
-            <dl>
-              <dt>誕生年 / 年齢</dt>
-              <dd>
-                {state.birthYear} / {state.Age}
-              </dd>
-            </dl>
-            <dl>
-              <dt>技術スタック</dt>
-              <dd>
-                <ul className={classes.ul}>
-                  <li>PHP / Laravel</li>
-                  <li>React / TypeScript / Next.js</li>
-                  <li>AWS</li>
-                </ul>
-              </dd>
-            </dl>
-            <dl>
-              <dt>資格・認定</dt>
-              <dd>
-                <ul className={classes.ul}>
-                  <li>AWS認定SysOpsアドミニストレーター - アソシエイト（2020-01）</li>
-                  <li>AWS認定デベロッパー - アソシエイト（2019-12）</li>
-                  <li>AWS認定ソリューションアーキテクト - アソシエイト（2019-10）</li>
-                  <li>Python3エンジニア認定データ分析試験（2019−09）</li>
-                  <li>AWS認定クラウドプラクティショナー（2019−07）</li>
-                  <li>Python3エンジニア認定基礎試験（2019-03）</li>
-                  <li>日商簿記2級（2019-03）</li>
-                  <li>Excel VBA Standard（2019-01）</li>
-                  <li>ほめ達検定3級、2級（2018−12）</li>
-                  <li>Microsoft Office Specialist 2013 Master（2017-12）</li>
-                  <li>応用情報技術者（2014-12）</li>
-                </ul>
-              </dd>
-            </dl>
-            <dl>
-              <dt>趣味</dt>
-              <dd>映画鑑賞、カラオケ、酒、競プロ、絵</dd>
-            </dl>
+          <div className="sectionBody">
+            <div className={classes.profile}>
+              <div className="header">
+                <div className="title">Hideyuki Hashimoto</div>
+                <div className="job">Web Developer & Designer</div>
+              </div>
+              <div className="body">
+                <dl>
+                  <dt>誕生年 / 年齢</dt>
+                  <dd>
+                    {state.birthYear} / {state.Age}
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>技術スタック</dt>
+                  <dd>
+                    <ul className="ul">
+                      <li>PHP / Laravel</li>
+                      <li>React / TypeScript / Next.js</li>
+                      <li>AWS</li>
+                    </ul>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>資格・認定</dt>
+                  <dd>
+                    <ul className="ul">
+                      <li>AWS認定SysOpsアドミニストレーター - アソシエイト（2020-01）</li>
+                      <li>AWS認定デベロッパー - アソシエイト（2019-12）</li>
+                      <li>AWS認定ソリューションアーキテクト - アソシエイト（2019-10）</li>
+                      <li>Python3エンジニア認定データ分析試験（2019−09）</li>
+                      <li>AWS認定クラウドプラクティショナー（2019−07）</li>
+                      <li>Python3エンジニア認定基礎試験（2019-03）</li>
+                      <li>日商簿記2級（2019-03）</li>
+                      <li>Excel VBA Standard（2019-01）</li>
+                      <li>ほめ達検定3級、2級（2018−12）</li>
+                      <li>Microsoft Office Specialist 2013 Master（2017-12）</li>
+                      <li>応用情報技術者（2014-12）</li>
+                    </ul>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>趣味</dt>
+                  <dd>映画鑑賞、カラオケ、酒、競プロ、絵</dd>
+                </dl>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
       <section className={classes.section}>
-        <Container maxWidth="md" className={classes.profile}>
-          <div className={classes.sectionHeader}>
-            <Typography variant="h4" className={classes.sectionTitle}>
+        <Container maxWidth="md" className="container">
+          <div className="sectionHeader">
+            <Typography variant="h4" className="sectionTitle">
               Career
             </Typography>
           </div>
-          <div className={classes.sectionBody}>
+          <div className="sectionBody">
             <div className={classes.timeline}>
               <div className="entry">
                 <div className="header">
