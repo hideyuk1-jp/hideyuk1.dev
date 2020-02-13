@@ -80,11 +80,11 @@ const workItems: Array<Work> = [
     ),
   },
   {
-    title: 'hideyuk1.com',
+    title: 'hideyuk1.dev',
     date: '2020.02 - Now',
-    src: '/static/images/works/hideyuk1.com.jpg',
-    link: 'https://hideyuk1.com/',
-    github: 'https://github.com/hideyuk1-jp/hideyuk1.com-next.js',
+    src: '/static/images/works/hideyuk1.dev.jpg',
+    link: 'https://hideyuk1.dev/',
+    github: 'https://github.com/hideyuk1-jp/hideyuk1.dev',
     skills: [
       'React',
       'TypeScript',
@@ -235,7 +235,7 @@ const Index: NextPage = () => {
   });
 
   return (
-    <Layout title="Portfolio | hideyuk1.com">
+    <Layout title="Portfolio | hideyuk1.dev">
       <ContentHero title="Portfolio" subtitle="制作物" />
       {items}
     </Layout>

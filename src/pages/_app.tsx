@@ -29,18 +29,21 @@ export default class MyApp extends App {
               src: url('/static/fonts/MPLUSRounded1c-Regular.ttf') format('truetype');
               font-weight: 400;
               font-style: normal;
+              font-display: swap;
             }
             @font-face {
               font-family: 'M PLUS Rounded 1c';
               src: url('/static/fonts/MPLUSRounded1c-Medium.ttf') format('truetype');
               font-weight: 500;
               font-style: normal;
+              font-display: swap;
             }
             @font-face {
               font-family: 'M PLUS Rounded 1c';
               src: url('/static/fonts/MPLUSRounded1c-Bold.ttf') format('truetype');
               font-weight: 700;
               font-style: normal;
+              font-display: swap;
             }
           `}</style>
         </ThemeProvider>
