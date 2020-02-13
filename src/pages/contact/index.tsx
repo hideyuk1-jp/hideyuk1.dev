@@ -1,14 +1,13 @@
 import React from 'react';
 import { NextPage } from 'next';
+
 import Layout from '../../components/Layout';
-import Hero from '../../components/Hero';
-import Profile from '../../components/Profile';
+import ContentHero from '../../components/ContentHero';
 
 const Index: NextPage = () => {
   return (
-    <Layout>
-      <Hero />
-      <Profile />
+    <Layout title="Contact | hideyuk1.com">
+      <ContentHero title="Contact" subtitle="お問い合わせ" />
     </Layout>
   );
 };
