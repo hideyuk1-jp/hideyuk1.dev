@@ -7,6 +7,7 @@ import { Chip, IconButton } from '@material-ui/core';
 import { Link as LinkIcon, GitHub as GitHubIcon } from '@material-ui/icons';
 
 import Layout from '../../components/Layout';
+import ContentHero from '../../components/ContentHero';
 
 interface Work {
   title: string;
@@ -235,16 +236,7 @@ const Index: NextPage = () => {
 
   return (
     <Layout title="Portfolio | hideyuk1.com">
-      <section>
-        <Container maxWidth="md" className={classes.hero}>
-          <div className={classes.heroText}>
-            <Typography component="div" variant="h4" className={classes.heroTitle}>
-              Portfolio
-            </Typography>
-            <p>制作物</p>
-          </div>
-        </Container>
-      </section>
+      <ContentHero title="Portfolio" subtitle="制作物" />
       {items}
     </Layout>
   );
