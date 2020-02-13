@@ -80,7 +80,7 @@ const workItems: Array<Work> = [
   },
   {
     title: 'hideyuk1.com',
-    date: '2020.02',
+    date: '2020.02 - Now',
     src: '/static/images/works/hideyuk1.com.jpg',
     link: 'https://hideyuk1.com/',
     github: 'https://github.com/hideyuk1-jp/hideyuk1.com-next.js',
@@ -95,25 +95,13 @@ const workItems: Array<Work> = [
     ],
     body: (
       <p>
-        ProgateでRuby on Railsを学んだ直後に作成したポートフォリオ用のサンプルアプリケーションです。
+        今いるこのポートフォリオサイト兼ブログです。
+        <br />
+        元々はWordPressで作成していましたが、Next.jsを使ったサーバレスの静的サイトとして作り直しました。
         <br />
         <br />
-        主な機能として以下を実装しました。
-        <br />
-        ・ユーザーの登録・詳細表示・編集・削除
-        <br />
-        ・ユーザー認証
-        <br />
-        ・投稿の登録・詳細表示・編集・削除
-        <br />
-        ・投稿へのコメントの登録・削除
-        <br />
-        ・投稿へのいいねの登録・削除
-        <br />
-        ・投稿の検索
-        <br />
-        <br />
-        実際に動くものを作ろうと思ってHerokuにデプロイするところまで行いました。
+        GitHubへpushすると、自動的にAWS
+        CodePipelineでビルド・デプロイされてS3にホスティングされるように設定しています。
       </p>
     ),
   },
@@ -135,7 +123,7 @@ const useStyles = makeStyles((theme: Theme) =>
     heroText: {
       textAlign: 'center',
       '& > p': {
-        color: '#999',
+        color: theme.palette.text.secondary,
         margin: 0,
       },
     },
@@ -180,7 +168,7 @@ const useStyles = makeStyles((theme: Theme) =>
         boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 7px 10px -5px rgba(75, 192, 200, 0.4)',
       },
       '& .link-icons': {
-        marginTop: theme.spacing(1),
+        margin: `${theme.spacing(1)}px 0`,
       },
       '& .title': {
         letterSpacing: theme.spacing(0.5),
