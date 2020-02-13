@@ -118,52 +118,47 @@ const Nav: React.FunctionComponent<Props> = props => {
     setState({ ...state, [side]: open });
   };
 
-  const links: { attributes: { href: string; target?: string; rel?: string }; text: string }[] = [
-    {
-      attributes: {
-        href: '/',
-      },
-      text: 'About',
-    },
-    {
-      attributes: {
-        href: '/work',
-      },
-      text: 'Portfolio',
-    },
-    {
-      attributes: {
-        href: '/blog',
-      },
-      text: 'Blog',
-    },
-    {
-      attributes: {
-        href: '/contact',
-      },
-      text: 'Contact',
-    },
-  ];
-
-  const menuLinks = () => (
+  const menuLinks = (
     <>
-      {links.map(link => (
-        <Link
-          {...link.attributes}
-          key={link.attributes.href}
-          className={clsx({
-            selected:
-              (link.attributes.href === '/' && pathname === '/') ||
-              (link.attributes.href !== '/' && route.startsWith(link.attributes.href)),
-          })}
-        >
-          {link.text}
-        </Link>
-      ))}
+      <Link
+        href="/"
+        className={clsx({
+          selected: pathname === '/',
+        })}
+      >
+        About
+      </Link>
+
+      <Link
+        href="/work"
+        className={clsx({
+          selected: route.startsWith('/work'),
+        })}
+      >
+        Portfolio
+      </Link>
+
+      <Link
+        href="/blog"
+        className={clsx({
+          selected: route.startsWith('/blog'),
+        })}
+      >
+        Blog
+      </Link>
+
+      <Link
+        href="/contact"
+        className={clsx({
+          selected: route.startsWith('/contact'),
+        })}
+      >
+        Contact
+      </Link>
     </>
   );
 
-  const socialLinks = () => (
+  const socialLinks = (
     <div className={classes.socialLinks}>
       <Tooltip title="Twitter" arrow>
         <IconButton color="inherit" href={twitterUrl} target="_blank" rel="noopener">
@@ -186,16 +181,16 @@ const Nav: React.FunctionComponent<Props> = props => {
         </IconButton>
       </div>
       <Divider />
-      {menuLinks()}
+      {menuLinks}
       <Divider />
-      <Hidden smUp>{socialLinks()}</Hidden>
+      <Hidden smUp>{socialLinks}</Hidden>
     </div>
   );
 
   return (
     <nav className={classes.nav}>
-      <Hidden smDown>{menuLinks()}</Hidden>
-      <Hidden xsDown>{socialLinks()}</Hidden>
+      <Hidden smDown>{menuLinks}</Hidden>
+      <Hidden xsDown>{socialLinks}</Hidden>
       <Hidden mdUp>
         <div>
           <IconButton color="inherit" edge="end" onClick={toggleDrawer('right', true)}>

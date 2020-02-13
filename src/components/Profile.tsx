@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginTop: theme.spacing(2),
       padding: `0 ${theme.spacing(2)}px ${theme.spacing(2)}px`,
       borderRadius: theme.spacing(1),
-      boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.1)',
+      boxShadow: '0 1px 4px 1px rgba(0, 0, 0, 0.1)',
       '& > .header': {
         display: 'inline-block',
         color: '#eaeaea',
@@ -111,7 +111,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       '& .body': {
         background: theme.palette.background.paper,
-        boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.1)',
+        boxShadow: '0 1px 4px 1px rgba(0, 0, 0, 0.1)',
         borderRadius: theme.spacing(1),
         padding: theme.spacing(2),
       },
@@ -221,22 +221,20 @@ const Profile: React.FunctionComponent = () => {
             <div className={classes.timeline}>
               <div className="entry">
                 <div className="header">
-                  <p className="during">2019-09 - 2019-12</p>
+                  <p className="during">2019.09 - 2019.12</p>
                   <p className="title">Web系受託開発ベンチャー / Web Developer</p>
                 </div>
                 <div className="body">
                   <p>
-                    前職の会計事務所でのITを活用した業務効率化の経験にやりがいを感じ、ITで生きてくと決意し転職しました。
+                    前職の会計事務所でのITを活用した業務効率化の経験にやりがいを感じ、ITで生きていくことを決意し転職しました。
                     <br />
-                    PHP/Laravelを採用したプラットフォーム開発にバックエンドエンジニアとして従事しました。
-                    <br />
-                    その他に新規案件のAWSアーキテクチャ設計やQA（テスト）業務を行いました。
+                    PHP/Laravelを採用したプラットフォーム開発にバックエンドエンジニアとして従事した他、新規案件のAWSアーキテクチャ設計やQA（テスト）業務を経験しました。
                   </p>
                 </div>
               </div>
               <div className="entry">
                 <div className="header">
-                  <p className="during">2016-01 - 2019-08</p>
+                  <p className="during">2016.01 - 2019.08</p>
                   <p className="title">会計事務所 / 税理士補助</p>
                 </div>
                 <div className="body">
@@ -249,12 +247,12 @@ const Profile: React.FunctionComponent = () => {
               </div>
               <div className="entry">
                 <div className="header">
-                  <p className="during">2012-09</p>
+                  <p className="during">2012.09</p>
                   <p className="title">大阪大学 情報システム工学科目 中退</p>
                 </div>
                 <div className="body">
                   <p>
-                    CSの基礎などを学びましたが、サークル活動や商売ばかりやっていたら卒業できませんでした。
+                    4年次まで進級しCSの基礎などを学びましたが、自身で立ち上げたサークルの活動や商売ばかりやっていたら卒業できませんでした。
                   </p>
                 </div>
               </div>
