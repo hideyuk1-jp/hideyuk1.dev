@@ -12,6 +12,33 @@ import CloseIcon from '@material-ui/icons/Close';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import TwitterIcon from '@material-ui/icons/Twitter';
 
+const links: { attributes: { href: string; target?: string; rel?: string }; text: string }[] = [
+  {
+    attributes: {
+      href: '/',
+    },
+    text: 'About',
+  },
+  {
+    attributes: {
+      href: '/work',
+    },
+    text: 'Portfolio',
+  },
+  {
+    attributes: {
+      href: '/blog',
+    },
+    text: 'Blog',
+  },
+  {
+    attributes: {
+      href: '/contact',
+    },
+    text: 'Contact',
+  },
+];
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     nav: {
@@ -117,33 +144,6 @@ const Nav: React.FunctionComponent<Props> = props => {
 
     setState({ ...state, [side]: open });
   };
-
-  const links: { attributes: { href: string; target?: string; rel?: string }; text: string }[] = [
-    {
-      attributes: {
-        href: '/',
-      },
-      text: 'About',
-    },
-    {
-      attributes: {
-        href: '/work',
-      },
-      text: 'Portfolio',
-    },
-    {
-      attributes: {
-        href: '/blog',
-      },
-      text: 'Blog',
-    },
-    {
-      attributes: {
-        href: '/contact',
-      },
-      text: 'Contact',
-    },
-  ];
 
   const menuLinks = () => (
     <>
