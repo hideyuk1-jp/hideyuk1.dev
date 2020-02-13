@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
           flex: 1,
           '& > .sectionTitle': {
             fontWeight: 700,
+            letterSpacing: theme.spacing(0.5),
           },
         },
         '& > .sectionBody': {
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme: Theme) =>
         display: 'inline-block',
         color: '#eaeaea',
         background: theme.palette.primary.main,
-        margin: `-${theme.spacing(2)}px 0 ${theme.spacing(2)}px`,
+        margin: `-${theme.spacing(2)}px 0 ${theme.spacing(4)}px`,
         padding: theme.spacing(2),
         borderRadius: theme.spacing(0.5),
         boxShadow: '0 4px 20px 0 rgba(0, 0, 0,0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
@@ -50,13 +51,13 @@ const useStyles = makeStyles((theme: Theme) =>
           lineHeight: 1.0,
         },
       },
-      '& > body > dl': {
+      '& > .body > dl': {
         margin: `0 0 ${theme.spacing(2)}px`,
         '& > dt': {
-          fontWeight: 700,
+          color: theme.palette.text.secondary,
         },
         '& > dd': {
-          paddingTop: theme.spacing(2),
+          paddingTop: theme.spacing(0.5),
         },
       },
       '& .ul': {
@@ -100,11 +101,13 @@ const useStyles = makeStyles((theme: Theme) =>
       '& p': {
         margin: `0`,
       },
-      '& .title, & .during': {
-        marginBottom: theme.spacing(2),
+      '& .during': {
+        color: theme.palette.text.secondary,
+        marginBottom: theme.spacing(0.5),
       },
       '& .title': {
         fontWeight: 700,
+        marginBottom: theme.spacing(2),
       },
       '& .body': {
         background: theme.palette.background.paper,
