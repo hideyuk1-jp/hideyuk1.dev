@@ -61,7 +61,7 @@ const Header: React.FunctionComponent<Props> = props => {
           <Typography component="h1" variant="h6" className={classes.title} noWrap>
             <Link href="/">
               hideyuk<span className={classes.accent}>1</span>
-              <span className={classes.small}>.com</span>
+              <span className={classes.small}>.dev</span>
             </Link>
           </Typography>
           <Nav twitterUrl={twitterUrl} githubUrl={githubUrl} />

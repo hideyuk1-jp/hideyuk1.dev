@@ -10,6 +10,9 @@ export default class MyDocument extends Document {
         <Head>
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
+          <link rel="preload" as="font" href="/static/fonts/MPLUSRounded1c-Regular.ttf" />
+          <link rel="preload" as="font" href="/static/fonts/MPLUSRounded1c-Medium.ttf" />
+          <link rel="preload" as="font" href="/static/fonts/MPLUSRounded1c-Bold.ttf" />
         </Head>
         <body>
           <Main />

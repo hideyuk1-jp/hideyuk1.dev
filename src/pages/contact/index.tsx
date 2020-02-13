@@ -6,7 +6,7 @@ import ContentHero from '../../components/ContentHero';
 
 const Index: NextPage = () => {
   return (
-    <Layout title="Contact | hideyuk1.com">
+    <Layout title="Contact | hideyuk1.dev">
       <ContentHero title="Contact" subtitle="お問い合わせ" />
     </Layout>
   );

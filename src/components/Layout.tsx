@@ -24,7 +24,7 @@ interface Props {
 }
 
 const Layout: React.FunctionComponent<Props> = ({
-  title = 'hideyuk1.com',
+  title = 'hideyuk1.dev',
   description = '',
   twitterUrl = 'https://twitter.com/hideyuk1_jp',
   githubUrl = 'https://github.com/hideyuk1-jp',
