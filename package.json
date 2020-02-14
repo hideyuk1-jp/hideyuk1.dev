@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hideyuk1-jp/hideyuk1.com-next.js.git"
+    "url": "git+https://github.com/hideyuk1-jp/hideyuk1.dev.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hideyuk1-jp/hideyuk1.com-next.js/issues"
+    "url": "https://github.com/hideyuk1-jp/hideyuk1.dev/issues"
   },
-  "homepage": "https://github.com/hideyuk1-jp/hideyuk1.com-next.js#readme",
+  "homepage": "https://hideyuk1.dev",
   "dependencies": {
     "@material-ui/core": "^4.9.1",
     "@material-ui/icons": "^4.9.1",

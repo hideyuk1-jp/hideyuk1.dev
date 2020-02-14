@@ -27,7 +27,7 @@ const SocialMeta: React.FunctionComponent<Meta> = ({
     {image ? (
       <meta name="og:image" content={`https://hideyuk1.dev${image}`} />
     ) : (
-      <meta name="og:image" content="https://hideyuk1.dev/static/ogp.png" />
+      <meta name="og:image" content="https://hideyuk1.dev/static/images/ogp.png" />
     )}
     {keywords && <meta name="keywords" content={keywords} />}
   </Head>
