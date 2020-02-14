@@ -6,8 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import { Chip, IconButton } from '@material-ui/core';
 import { Link as LinkIcon, GitHub as GitHubIcon } from '@material-ui/icons';
 
-import Layout from '../../components/Layout';
-import ContentHero from '../../components/ContentHero';
+import Layout from '../components/Layout';
+import ContentHero from '../components/ContentHero';
 
 interface Work {
   title: string;
@@ -21,37 +21,36 @@ interface Work {
 
 const workItems: Array<Work> = [
   {
-    title: 'TodoistChute',
-    date: '2018.07 - Now',
-    src: '/static/images/works/todoist-chute.jpg',
-    link:
-      'https://chrome.google.com/webstore/detail/todoistchute-finish-time/ghllkaandaghmnhgldofdmollpjlefmj',
-    github: 'https://github.com/hideyuk1-jp/todoistchute',
-    skills: ['Javascript', 'JQuery', 'UIkit'],
+    title: 'hideyuk1.dev',
+    date: '2020.02 - Now',
+    src: '/static/images/work/hideyuk1.dev.jpg',
+    link: 'https://hideyuk1.dev/',
+    github: 'https://github.com/hideyuk1-jp/hideyuk1.dev',
+    skills: [
+      'React',
+      'TypeScript',
+      'Next.js',
+      'Material-UI',
+      'AWS CodePipeline',
+      'AWS S3',
+      'AWS CloudFront',
+    ],
     body: (
       <p>
-        Todoist用に作成したChrome拡張機能です。
+        今いるこのポートフォリオサイト兼ブログです。
         <br />
-        Todoistのタスクに見積時間を設定することで、合計時間を集計して完了予定時刻を表示します。
+        元々はWordPressで作成していましたが、Next.jsを使ったサーバレスの静的サイトとして作り直しました。
         <br />
         <br />
-        以下の機能をJQueryにより実装しました。
-        <br />
-        ・タスクごとの見積もり時間を集計
-        <br />
-        ・タスク数・タスクの合計時間を表示
-        <br />
-        ・日付によるタスクの絞り込み
-        <br />
-        ・現在時刻とタスクの合計時間から完了時刻を表示
-        <br />
+        GitHubへpushすると、自動的にAWS
+        CodePipelineでビルド・デプロイされてS3にホスティングされるように設定しています。
       </p>
     ),
   },
   {
     title: 'TweetApp',
     date: '2019.05',
-    src: '/static/images/works/tweet-app.jpg',
+    src: '/static/images/work/tweet-app.jpg',
     link: 'https://hideyuk1-tweet-app.herokuapp.com/',
     github: 'https://github.com/hideyuk1-jp/tweet-app',
     skills: ['Ruby on Rails', 'Bootstrap', 'Heroku'],
@@ -80,29 +79,30 @@ const workItems: Array<Work> = [
     ),
   },
   {
-    title: 'hideyuk1.dev',
-    date: '2020.02 - Now',
-    src: '/static/images/works/hideyuk1.dev.jpg',
-    link: 'https://hideyuk1.dev/',
-    github: 'https://github.com/hideyuk1-jp/hideyuk1.dev',
-    skills: [
-      'React',
-      'TypeScript',
-      'Next.js',
-      'Material-UI',
-      'AWS CodePipeline',
-      'AWS S3',
-      'AWS CloudFront',
-    ],
+    title: 'TodoistChute',
+    date: '2018.07 - Now',
+    src: '/static/images/work/todoist-chute.jpg',
+    link:
+      'https://chrome.google.com/webstore/detail/todoistchute-finish-time/ghllkaandaghmnhgldofdmollpjlefmj',
+    github: 'https://github.com/hideyuk1-jp/todoistchute',
+    skills: ['Javascript', 'JQuery', 'UIkit'],
     body: (
       <p>
-        今いるこのポートフォリオサイト兼ブログです。
+        Todoist用に作成したChrome拡張機能です。
         <br />
-        元々はWordPressで作成していましたが、Next.jsを使ったサーバレスの静的サイトとして作り直しました。
+        Todoistのタスクに見積時間を設定することで、合計時間を集計して完了予定時刻を表示します。
         <br />
         <br />
-        GitHubへpushすると、自動的にAWS
-        CodePipelineでビルド・デプロイされてS3にホスティングされるように設定しています。
+        以下の機能をJQueryにより実装しました。
+        <br />
+        ・タスクごとの見積もり時間を集計
+        <br />
+        ・タスク数・タスクの合計時間を表示
+        <br />
+        ・日付によるタスクの絞り込み
+        <br />
+        ・現在時刻とタスクの合計時間から完了時刻を表示
+        <br />
       </p>
     ),
   },
@@ -185,10 +185,10 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const Index: NextPage = () => {
+const WorkIndex: NextPage = () => {
   const classes = useStyles();
 
-  const items = workItems.reverse().map(workItem => {
+  const items = workItems.map(workItem => {
     return (
       <section key={workItem.title} className={classes.workItem}>
         <Container maxWidth="md" className="container">
@@ -244,4 +244,4 @@ const Index: NextPage = () => {
   );
 };
 
-export default Index;
+export default WorkIndex;
