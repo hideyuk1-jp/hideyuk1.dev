@@ -9,6 +9,7 @@ import { Container, Typography, Chip } from '@material-ui/core';
 
 import Layout from '../components/Layout';
 import ContentHero from '../components/ContentHero';
+import SocialMeta from '../components/SocialMeta';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -17,6 +18,9 @@ const useStyles = makeStyles((theme: Theme) =>
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)',
         gridGap: theme.spacing(4),
+        [theme.breakpoints.down('xs')]: {
+          gridTemplateColumns: '1fr',
+        },
       },
       '& article': {
         position: 'relative',
@@ -79,7 +83,7 @@ function importAll(r: any): Array<MDXElement> {
   return r.keys().map(r);
 }
 
-const previewItems: Array<MDXElement> = importAll(require.context('./', true, /\.mdx$/));
+const previewItems: Array<MDXElement> = importAll(require.context('./blog', false, /\.mdx$/));
 
 function dateSortDesc(a: MDXElement, b: MDXElement) {
   const date1 = new Date(a.meta.date);
@@ -118,6 +122,7 @@ const BlogIndex: NextPage = () => {
   return (
     <>
       <Layout title="Blog | hideyuk1.dev">
+        <SocialMeta title="Blog | hideyuk1.dev" url="https://hideyuk1.dev/blog" />
         <ContentHero title="Blog" subtitle="記事" />
         <section className={classes.postList}>
           <Container maxWidth="md" className="container">

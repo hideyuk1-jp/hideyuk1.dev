@@ -8,6 +8,7 @@ import { Link as LinkIcon, GitHub as GitHubIcon } from '@material-ui/icons';
 
 import Layout from '../components/Layout';
 import ContentHero from '../components/ContentHero';
+import SocialMeta from '../components/SocialMeta';
 
 interface Work {
   title: string;
@@ -238,6 +239,7 @@ const WorkIndex: NextPage = () => {
 
   return (
     <Layout title="Portfolio | hideyuk1.dev">
+      <SocialMeta title="Portfolio | hideyuk1.dev" url="https://hideyuk1.dev/work" />
       <ContentHero title="Portfolio" subtitle="制作物" />
       {items}
     </Layout>
