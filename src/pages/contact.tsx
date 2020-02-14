@@ -4,6 +4,7 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
 import Layout from '../components/Layout';
 import ContentHero from '../components/ContentHero';
+import SocialMeta from '../components/SocialMeta';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,6 +24,7 @@ const ContactIndex: NextPage = () => {
 
   return (
     <Layout title="Contact | hideyuk1.dev">
+      <SocialMeta title="Contact | hideyuk1.dev" url="https://hideyuk1.dev/contact" />
       <ContentHero title="Contact" subtitle="お問い合わせ" />
     </Layout>
   );

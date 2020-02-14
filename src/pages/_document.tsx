@@ -6,8 +6,10 @@ import theme from '../components/theme';
 export default class MyDocument extends Document {
   render() {
     return (
-      <html lang="en">
+      <html lang="ja">
         <Head>
+          <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+          <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
           {/* Google Fonts */}
