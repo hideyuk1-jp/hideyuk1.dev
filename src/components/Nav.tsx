@@ -1,11 +1,12 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import NextLink from 'next/link';
 import clsx from 'clsx';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import { Hidden, IconButton } from '@material-ui/core';
+import MuiLink from '@material-ui/core/Link';
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
-import Link from '@material-ui/core/Link';
 import Tooltip from '@material-ui/core/Tooltip';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
@@ -120,41 +121,45 @@ const Nav: React.FunctionComponent<Props> = props => {
 
   const menuLinks = (
     <>
-      <Link
-        href="/"
-        className={clsx({
-          selected: pathname === '/',
-        })}
-      >
-        About
-      </Link>
+      <NextLink href="/" passHref>
+        <MuiLink
+          className={clsx({
+            selected: pathname === '/',
+          })}
+        >
+          About
+        </MuiLink>
+      </NextLink>
 
-      <Link
-        href="/work"
-        className={clsx({
-          selected: route.startsWith('/work'),
-        })}
-      >
-        Portfolio
-      </Link>
+      <NextLink href="/work" passHref>
+        <MuiLink
+          className={clsx({
+            selected: route.startsWith('/work'),
+          })}
+        >
+          Portfolio
+        </MuiLink>
+      </NextLink>
 
-      <Link
-        href="/blog"
-        className={clsx({
-          selected: route.startsWith('/blog'),
-        })}
-      >
-        Blog
-      </Link>
+      <NextLink href="/blog" passHref>
+        <MuiLink
+          className={clsx({
+            selected: route.startsWith('/blog'),
+          })}
+        >
+          Blog
+        </MuiLink>
+      </NextLink>
 
-      <Link
-        href="/contact"
-        className={clsx({
-          selected: route.startsWith('/contact'),
-        })}
-      >
-        Contact
-      </Link>
+      <NextLink href="/contact" passHref>
+        <MuiLink
+          className={clsx({
+            selected: route.startsWith('/contact'),
+          })}
+        >
+          Contact
+        </MuiLink>
+      </NextLink>
     </>
   );
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import NextLink from 'next/link';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
@@ -62,12 +63,16 @@ const Hero: React.FunctionComponent = () => {
               バックエンドだけでなく、フロントエンドもインフラもいけちゃうフルスタックエンジニアを目指しています。
             </p>
             <div className={classes.buttons}>
-              <Button variant="outlined" color="primary" href="/work">
-                制作物を見る
-              </Button>
-              <Button variant="outlined" color="primary" href="/contact">
-                メッセージを送る
-              </Button>
+              <NextLink href="/work" passHref>
+                <Button variant="outlined" color="primary">
+                  制作物を見る
+                </Button>
+              </NextLink>
+              <NextLink href="/contact" passHref>
+                <Button variant="outlined" color="primary">
+                  メッセージを送る
+                </Button>
+              </NextLink>
             </div>
           </div>
         </Container>
