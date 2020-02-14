@@ -201,6 +201,7 @@ const Index: NextPage = () => {
                 disabled={!workItem.link}
                 target="_blank"
                 rel="noopener"
+                aria-label="Link"
               >
                 <LinkIcon />
               </IconButton>
@@ -210,6 +211,7 @@ const Index: NextPage = () => {
                 disabled={!workItem.github}
                 target="_blank"
                 rel="noopener"
+                aria-label="GitHub"
               >
                 <GitHubIcon />
               </IconButton>

@@ -161,12 +161,24 @@ const Nav: React.FunctionComponent<Props> = props => {
   const socialLinks = (
     <div className={classes.socialLinks}>
       <Tooltip title="Twitter" arrow>
-        <IconButton color="inherit" href={twitterUrl} target="_blank" rel="noopener">
+        <IconButton
+          color="inherit"
+          href={twitterUrl}
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+        >
           <TwitterIcon />
         </IconButton>
       </Tooltip>
       <Tooltip title="GitHub" arrow>
-        <IconButton color="inherit" href={githubUrl} target="_blank" rel="noopener">
+        <IconButton
+          color="inherit"
+          href={githubUrl}
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+        >
           <GitHubIcon />
         </IconButton>
       </Tooltip>
@@ -176,7 +188,7 @@ const Nav: React.FunctionComponent<Props> = props => {
   const sideList = (side: DrawerSide) => (
     <div className={classes.drawer}>
       <div className={classes.drawerHeader}>
-        <IconButton onClick={toggleDrawer(side, false)}>
+        <IconButton onClick={toggleDrawer(side, false)} aria-label="Menu Close">
           <CloseIcon />
         </IconButton>
       </div>
@@ -193,7 +205,12 @@ const Nav: React.FunctionComponent<Props> = props => {
       <Hidden xsDown>{socialLinks}</Hidden>
       <Hidden mdUp>
         <div>
-          <IconButton color="inherit" edge="end" onClick={toggleDrawer('right', true)}>
+          <IconButton
+            color="inherit"
+            edge="end"
+            onClick={toggleDrawer('right', true)}
+            aria-label="Menu Open"
+          >
             <MenuIcon />
           </IconButton>
         </div>
