@@ -15,7 +15,6 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    fontFamily: ['"M PLUS Rounded 1c"', 'sans-serif'].join(', '),
     fontWeightRegular: 500,
     button: {
       textTransform: 'none',
