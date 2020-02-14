@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) =>
         margin: `-${theme.spacing(2)}px 0 ${theme.spacing(4)}px`,
         padding: theme.spacing(2),
         borderRadius: theme.spacing(1),
-        boxShadow: '0 4px 20px 0 rgba(0, 0, 0,0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
+        boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
         '& > .title': {
           paddingBottom: theme.spacing(0.5),
           fontWeight: 700,
@@ -93,7 +93,7 @@ const useStyles = makeStyles((theme: Theme) =>
           height: theme.spacing(2),
           width: theme.spacing(2),
           background: theme.palette.primary.main,
-          boxShadow: '0 4px 20px 0 rgba(0, 0, 0,0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
+          boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
           borderRadius: '50%',
           zIndex: 2,
         },

@@ -4,6 +4,7 @@ import App from 'next/app';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../components/theme';
+import './markdown.css';
 
 export default class MyApp extends App {
   componentDidMount() {

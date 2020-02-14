@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     buttons: {
       '& > *, & > *:hover': {
-        boxShadow: '0 4px 20px 0 rgba(0, 0, 0,0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
+        boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
         background: theme.palette.background.paper,
         margin: theme.spacing(1),
       },

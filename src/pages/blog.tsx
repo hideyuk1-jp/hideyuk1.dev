@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme: Theme) =>
         maxWidth: '100%',
         margin: `-${theme.spacing(2)}px 0 ${theme.spacing(2)}px`,
         borderRadius: theme.spacing(1),
-        boxShadow: '0 4px 20px 0 rgba(0, 0, 0,0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
+        boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
         overflow: 'hidden',
       },
       '& .title': {

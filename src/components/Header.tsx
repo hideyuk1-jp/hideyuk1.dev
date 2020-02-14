@@ -9,7 +9,7 @@ import Nav from './Nav';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     navbar: {
-      boxShadow: '0 4px 20px 0 rgba(0, 0, 0,0.1), 0 7px 10px -5px rgba(0, 0, 0, 0.2)',
+      boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 7px 10px -5px rgba(0, 0, 0, 0.2)',
       background: '#454545',
       color: '#eaeaea',
       '& a': {

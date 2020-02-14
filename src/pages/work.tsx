@@ -166,7 +166,7 @@ const useStyles = makeStyles((theme: Theme) =>
       '& .image': {
         maxWidth: '100%',
         borderRadius: theme.spacing(2),
-        boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 7px 10px -5px rgba(75, 192, 200, 0.4)',
+        boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
       },
       '& .link-icons': {
         margin: `${theme.spacing(1)}px 0`,
