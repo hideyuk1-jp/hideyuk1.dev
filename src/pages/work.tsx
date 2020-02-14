@@ -25,7 +25,6 @@ const workItems: Array<Work> = [
     title: 'hideyuk1.dev',
     date: '2020.02 - Now',
     src: '/static/images/work/hideyuk1.dev.jpg',
-    link: 'https://hideyuk1.dev/',
     github: 'https://github.com/hideyuk1-jp/hideyuk1.dev',
     skills: [
       'React',
