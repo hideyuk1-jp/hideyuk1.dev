@@ -1,9 +1,11 @@
 import React from 'react';
+import NextLink from 'next/link';
+
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import { AppBar, Toolbar } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
+import MuiLink from '@material-ui/core/Link';
 import Nav from './nav';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -58,10 +60,12 @@ const Header: React.FunctionComponent<Props> = ({ twitterUrl, githubUrl, siteTit
       <Container maxWidth="md" className={classes.container}>
         <Toolbar className={classes.toolbar}>
           <Typography component={siteTitleComponent} variant="h4" className={classes.title} noWrap>
-            <Link href="/">
-              hideyuk<span className={classes.accent}>1</span>
-              <span className={classes.small}>.dev</span>
-            </Link>
+            <NextLink href="/" passHref>
+              <MuiLink>
+                hideyuk<span className={classes.accent}>1</span>
+                <span className={classes.small}>.dev</span>
+              </MuiLink>
+            </NextLink>
           </Typography>
           <Nav twitterUrl={twitterUrl} githubUrl={githubUrl} />
         </Toolbar>
