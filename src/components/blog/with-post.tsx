@@ -40,7 +40,7 @@ interface Meta {
 
 const withPost = (meta: Meta) => ({ children }: { children: ReactElement }) => {
   const classes = useStyles();
-  const date = meta.date ? new Date(meta.date) : new Date();
+  const date = dataformat(meta.date ? new Date(meta.date) : new Date(), 'yyyy.mm.dd HH:MM');
 
   return (
     <Layout title={`Blog - ${meta.title} | hideyuk1.dev`} siteTitleComponent="h3">
@@ -51,7 +51,7 @@ const withPost = (meta: Meta) => ({ children }: { children: ReactElement }) => {
       />
       <BlogHero
         title={meta.title}
-        subtitle={dataformat(date, 'yyyy.mm.dd HH:MM:ss')}
+        date={date}
         titleComponent="h1"
         category={meta.category}
         tag={meta.tag}

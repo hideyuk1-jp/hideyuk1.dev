@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface Props {
   title: string;
-  subtitle: string;
+  date: string;
   titleComponent?: React.ElementType;
   category: string;
   tag: Array<string>;
@@ -41,7 +41,7 @@ interface Props {
 
 const BlogHero: React.FunctionComponent<Props> = ({
   title,
-  subtitle,
+  date,
   titleComponent = 'h2',
   category,
   tag,
@@ -55,7 +55,7 @@ const BlogHero: React.FunctionComponent<Props> = ({
           <Typography component={titleComponent} variant="h1" className={classes.heroTitle}>
             {title}
           </Typography>
-          <p className="date">{subtitle}</p>
+          <p className="date">{date}</p>
           <Chip size="small" label={category} color="primary" className={clsx('chip', 'cat')} />
           {tag &&
             tag.length &&

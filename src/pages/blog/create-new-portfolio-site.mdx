@@ -43,9 +43,9 @@ ACM で SSL 証明書も発行して https 化もした。
 
 サーバー借りるよりは安上がりになるんじゃないかと思う。
 
-### CD 環境: GitHub, AWS CodePipeline, CodeBuild, CodeDeploy
+### CD 環境: GitHub, AWS CodePipeline, CodeBuild
 
-GitHub の master ブランチに変更があると、自動的に AWS CodePipeline でパイプラインがじ開始されビルド・デプロイされるように設定した。
+GitHub の master ブランチに変更があると、自動的に AWS CodePipeline でパイプラインが開始され CodeBuild でビルド、S3 にデプロイされるように設定した。
 
 こちらもネットの解説が充実していて設定は思ったより簡単で驚いた。
 
@@ -58,4 +58,4 @@ GitHub の master ブランチに変更があると、自動的に AWS CodePipel
 - 無限スクロールで記事読み込み
 - ページ遷移時に良い感じのアニメーションつける
 
-とりあえず作りたいものを作れて楽しかった！
+とりあえず作りたいものを思う存分作れて楽しかった！
