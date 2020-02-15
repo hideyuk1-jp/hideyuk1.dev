@@ -1,10 +1,10 @@
 import React from 'react';
 import { NextPage } from 'next';
 
-import Layout from '../components/Layout';
-import Hero from '../components/home/Hero';
-import Profile from '../components/home/Profile';
-import SocialMeta from '../components/SocialMeta';
+import Layout from '../components/layout';
+import Hero from '../components/home/hero';
+import Profile from '../components/home/profile';
+import SocialMeta from '../components/social-meta';
 
 const Index: NextPage = () => {
   return (

@@ -1,0 +1,61 @@
+import withPost from '../../components/blog/with-post';
+
+export const meta = {
+  title: 'Next.js で新しいポートフォリオサイト兼ブログを作成した',
+  date: '2020-02-15T19:00:56',
+  category: 'Dev',
+  tag: ['Next.js', 'S3'],
+  url: '/blog/create-new-portfolio-site',
+  heroImage: '/static/blog/create-new-portfolio-site/hero.jpg',
+};
+
+export default withPost({ ...meta });
+
+WordPress の個人サイトを最近のフロントエンドの技術を使って作り直したいと前々から思っていた。
+
+そして無職になってから「今作るしかねえ！」ってことでモリモリ作っていってやっと完成（一旦は）した。
+
+1 週間くらいで作れると踏んでたけど、苦戦してたら何だかんだ時間がかかってしまった。
+
+とりあえず Next.js を検索のサジェストで Nuxt.js に変えようとするのやめて欲しい。
+
+## やったことをざっくりと紹介
+
+個々の細かい技術的な話などは別途記事にしたい。
+
+### サイト構築: Next.js, TypeScript, Material UI
+
+静的サイトとして出力するために Next.js を使うことにした。
+
+正直、今回のような静的なサイトの場合は静的サイトジェネレーターである Gatsby の方が適しているっぽいけど、 Next.js の方が守備範囲が広そうなので。
+
+勉強会でちょっと触った TypeScript もせっかくなので採用することにした。
+
+### 静的サイトホスティング: AWS S3, CloudFront
+
+ホスティング先として Netlify とかも気になったものの AWS が使いかったので、CloudFront をキャッシュサーバー、オリジンを S3 の静的サイトホスティングで公開した。
+
+.dev ドメインも新たに購入（AWS にはなかったので Google Domain）し、Route 53 で管理して CloudFront にルーティングするように設定している。
+
+ACM で SSL 証明書も発行して https 化もした。
+
+この辺りは文章にすると大変そうだがネットにたくさん解説があるので、ほとんど躓くことなく設定することが出来た。
+
+サーバー借りるよりは安上がりになるんじゃないかと思う。
+
+### CD 環境: GitHub, AWS CodePipeline, CodeBuild, CodeDeploy
+
+GitHub の master ブランチに変更があると、自動的に AWS CodePipeline でパイプラインがじ開始されビルド・デプロイされるように設定した。
+
+こちらもネットの解説が充実していて設定は思ったより簡単で驚いた。
+
+## 今後、追加したい機能
+
+このあたりは追って実装していきたいと思う。
+
+- AWS API Gateway -> Lambda -> SES でお問い合わせフォーム作成（メールが来る）
+- ブログ記事のカテゴリーやタグによる絞り込み
+- 無限スクロールで記事読み込み
+- ページ遷移時に良い感じのアニメーションつける
+
+とりあえず作りたいものを作れて楽しかった！

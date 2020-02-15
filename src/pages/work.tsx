@@ -6,9 +6,9 @@ import Typography from '@material-ui/core/Typography';
 import { Chip, IconButton } from '@material-ui/core';
 import { Link as LinkIcon, GitHub as GitHubIcon } from '@material-ui/icons';
 
-import Layout from '../components/Layout';
-import ContentHero from '../components/ContentHero';
-import SocialMeta from '../components/SocialMeta';
+import Layout from '../components/layout';
+import ContentHero from '../components/content-hero';
+import SocialMeta from '../components/social-meta';
 
 interface Work {
   title: string;
@@ -25,7 +25,6 @@ const workItems: Array<Work> = [
     title: 'hideyuk1.dev',
     date: '2020.02 - Now',
     src: '/static/images/work/hideyuk1.dev.jpg',
-    link: 'https://hideyuk1.dev/',
     github: 'https://github.com/hideyuk1-jp/hideyuk1.dev',
     skills: [
       'React',
@@ -167,7 +166,7 @@ const useStyles = makeStyles((theme: Theme) =>
       '& .image': {
         maxWidth: '100%',
         borderRadius: theme.spacing(2),
-        boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 7px 10px -5px rgba(75, 192, 200, 0.4)',
+        boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
       },
       '& .link-icons': {
         margin: `${theme.spacing(1)}px 0`,
@@ -219,7 +218,7 @@ const WorkIndex: NextPage = () => {
             </div>
           </div>
           <div className="sectionBody">
-            <Typography variant="h4" className="title">
+            <Typography component="h2" variant="h1" className="title">
               {workItem.title}
             </Typography>
             <p className="date">{workItem.date}</p>

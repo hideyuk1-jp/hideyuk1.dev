@@ -1,9 +1,13 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import App from 'next/app';
+
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+
 import theme from '../components/theme';
+import '../styles/markdown.css';
+import '../styles/atom-one-dark.css';
 
 export default class MyApp extends App {
   componentDidMount() {

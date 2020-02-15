@@ -7,9 +7,9 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import MuiLink from '@material-ui/core/Link';
 import { Container, Typography, Chip } from '@material-ui/core';
 
-import Layout from '../components/Layout';
-import ContentHero from '../components/ContentHero';
-import SocialMeta from '../components/SocialMeta';
+import Layout from '../components/layout';
+import ContentHero from '../components/content-hero';
+import SocialMeta from '../components/social-meta';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme: Theme) =>
         maxWidth: '100%',
         margin: `-${theme.spacing(2)}px 0 ${theme.spacing(2)}px`,
         borderRadius: theme.spacing(1),
-        boxShadow: '0 4px 20px 0 rgba(0, 0, 0,0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
+        boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
         overflow: 'hidden',
       },
       '& .title': {
@@ -103,7 +103,7 @@ const items: Array<ReactElement> = previewItems
             <div className="wrapper">
               <img src={meta.heroImage} alt={meta.title} className="thum" />
               <div className="text">
-                <Typography variant="h5" className="title">
+                <Typography component="h3" variant="h2" className="title">
                   {meta.title}
                 </Typography>
                 <div className="date">{dateformat(meta.date, 'yyyy.mm.dd')}</div>
@@ -111,7 +111,7 @@ const items: Array<ReactElement> = previewItems
             </div>
           </MuiLink>
         </NextLink>
-        <Chip className="cat" size="small" label={meta.category} color="secondary" />
+        <Chip className="cat" size="small" label={meta.category} color="primary" />
       </article>
     );
   });
