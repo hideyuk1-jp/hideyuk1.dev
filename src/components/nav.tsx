@@ -69,14 +69,30 @@ const useStyles = makeStyles((theme: Theme) =>
       width: '250px',
       boxShadow: 'none',
       '& > a': {
+        position: 'relative',
         display: 'block',
         width: '100%',
         padding: `${theme.spacing(2)}px ${theme.spacing(5)}px`,
         color: 'inherit',
         fontWeight: 700,
-        '&:hover': {
+        '&:after': {
+          content: '" "',
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          height: '100%',
+          width: theme.spacing(0.5),
+          background: theme.palette.primary.main,
+          transition: 'transform 0.3s ease-in-out',
+          transform: 'scale(1, 0)',
+          transformOrigin: 'left center',
+        },
+        '&:hover, &.selected': {
           textDecoration: 'none',
-          background: theme.palette.background.default,
+          color: theme.palette.primary.main,
+          '&:after': {
+            transform: 'scale(1, 1)',
+          },
         },
       },
       '& > $socialLinks': {
