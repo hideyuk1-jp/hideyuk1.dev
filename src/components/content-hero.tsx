@@ -29,17 +29,21 @@ const useStyles = makeStyles((theme: Theme) =>
 interface Props {
   title: string;
   subtitle: string;
+  titleComponent?: React.ElementType;
 }
 
-const ContentHero: React.FunctionComponent<Props> = props => {
+const ContentHero: React.FunctionComponent<Props> = ({
+  title,
+  subtitle,
+  titleComponent = 'h2',
+}) => {
   const classes = useStyles();
-  const { title, subtitle } = props;
 
   return (
     <section>
       <Container maxWidth="md" className={classes.hero}>
         <div className={classes.heroText}>
-          <Typography component="div" variant="h4" className={classes.heroTitle}>
+          <Typography component={titleComponent} variant="h1" className={classes.heroTitle}>
             {title}
           </Typography>
           <p>{subtitle}</p>

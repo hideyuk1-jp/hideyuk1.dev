@@ -103,11 +103,11 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       '& .during': {
         color: theme.palette.text.secondary,
-        marginBottom: theme.spacing(0.5),
+        marginBottom: theme.spacing(1),
       },
       '& .title': {
         fontWeight: 700,
-        marginBottom: theme.spacing(2),
+        marginBottom: theme.spacing(1.5),
       },
       '& .body': {
         background: theme.palette.background.paper,
@@ -156,7 +156,7 @@ const Profile: React.FunctionComponent = () => {
       <section className={classes.section}>
         <Container maxWidth="md" className="container">
           <div className="sectionHeader">
-            <Typography variant="h4" className="sectionTitle">
+            <Typography component="h2" variant="h1" className="sectionTitle">
               About me
             </Typography>
           </div>
@@ -213,7 +213,7 @@ const Profile: React.FunctionComponent = () => {
       <section className={classes.section}>
         <Container maxWidth="md" className="container">
           <div className="sectionHeader">
-            <Typography variant="h4" className="sectionTitle">
+            <Typography component="h2" variant="h1" className="sectionTitle">
               Career
             </Typography>
           </div>
@@ -222,7 +222,9 @@ const Profile: React.FunctionComponent = () => {
               <div className="entry">
                 <div className="header">
                   <p className="during">2019.09 - 2019.12</p>
-                  <p className="title">Web系受託開発ベンチャー / Web Developer</p>
+                  <Typography variant="h3" className="title">
+                    Web系受託開発ベンチャー / Web Developer
+                  </Typography>
                 </div>
                 <div className="body">
                   <p>
@@ -235,7 +237,9 @@ const Profile: React.FunctionComponent = () => {
               <div className="entry">
                 <div className="header">
                   <p className="during">2016.01 - 2019.08</p>
-                  <p className="title">会計事務所 / 税理士補助</p>
+                  <Typography variant="h3" className="title">
+                    会計事務所 / 税理士補助
+                  </Typography>
                 </div>
                 <div className="body">
                   <p>
@@ -248,7 +252,9 @@ const Profile: React.FunctionComponent = () => {
               <div className="entry">
                 <div className="header">
                   <p className="during">2012.09</p>
-                  <p className="title">大阪大学 情報システム工学科目 中退</p>
+                  <Typography variant="h3" className="title">
+                    大阪大学 情報システム工学科目 中退
+                  </Typography>
                 </div>
                 <div className="body">
                   <p>

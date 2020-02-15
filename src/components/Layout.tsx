@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Head from 'next/head';
-import Header from './Header';
+import Header from './header';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -21,6 +21,7 @@ interface Props {
   description?: string;
   twitterUrl?: string;
   githubUrl?: string;
+  siteTitleComponent?: React.ElementType;
 }
 
 const Layout: React.FunctionComponent<Props> = ({
@@ -28,6 +29,7 @@ const Layout: React.FunctionComponent<Props> = ({
   description = '',
   twitterUrl = 'https://twitter.com/hideyuk1_jp',
   githubUrl = 'https://github.com/hideyuk1-jp',
+  siteTitleComponent = 'h1',
   children,
 }) => {
   const classes = useStyles();
@@ -43,6 +45,7 @@ const Layout: React.FunctionComponent<Props> = ({
           siteDescription={description}
           twitterUrl={twitterUrl}
           githubUrl={githubUrl}
+          siteTitleComponent={siteTitleComponent}
         />
         <main className={classes.main}>{children}</main>
       </div>

@@ -6,9 +6,9 @@ import Typography from '@material-ui/core/Typography';
 import { Chip, IconButton } from '@material-ui/core';
 import { Link as LinkIcon, GitHub as GitHubIcon } from '@material-ui/icons';
 
-import Layout from '../components/Layout';
-import ContentHero from '../components/ContentHero';
-import SocialMeta from '../components/SocialMeta';
+import Layout from '../components/layout';
+import ContentHero from '../components/content-hero';
+import SocialMeta from '../components/social-meta';
 
 interface Work {
   title: string;
@@ -218,7 +218,7 @@ const WorkIndex: NextPage = () => {
             </div>
           </div>
           <div className="sectionBody">
-            <Typography variant="h4" className="title">
+            <Typography component="h2" variant="h1" className="title">
               {workItem.title}
             </Typography>
             <p className="date">{workItem.date}</p>

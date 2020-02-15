@@ -4,7 +4,7 @@ import { AppBar, Toolbar } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
-import Nav from './Nav';
+import Nav from './nav';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       gridArea: 'title',
       '& > a': {
-        fontSize: '28px',
+        fontSize: '2em',
         fontWeight: 700,
         textDecoration: 'none',
         '&:hover': {
@@ -47,18 +47,17 @@ interface Props {
   siteDescription: string;
   twitterUrl: string;
   githubUrl: string;
+  siteTitleComponent: React.ElementType;
 }
 
-const Header: React.FunctionComponent<Props> = props => {
+const Header: React.FunctionComponent<Props> = ({ twitterUrl, githubUrl, siteTitleComponent }) => {
   const classes = useStyles();
-
-  const { twitterUrl, githubUrl } = props;
 
   return (
     <AppBar position="sticky" className={classes.navbar}>
       <Container maxWidth="md" className={classes.container}>
         <Toolbar className={classes.toolbar}>
-          <Typography component="h1" variant="h6" className={classes.title} noWrap>
+          <Typography component={siteTitleComponent} variant="h4" className={classes.title} noWrap>
             <Link href="/">
               hideyuk<span className={classes.accent}>1</span>
               <span className={classes.small}>.dev</span>

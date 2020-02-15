@@ -2,9 +2,9 @@ import React from 'react';
 import { NextPage } from 'next';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
-import Layout from '../components/Layout';
-import ContentHero from '../components/ContentHero';
-import SocialMeta from '../components/SocialMeta';
+import Layout from '../components/layout';
+import ContentHero from '../components/content-hero';
+import SocialMeta from '../components/social-meta';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
