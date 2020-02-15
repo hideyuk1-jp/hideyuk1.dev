@@ -69,6 +69,7 @@ const useStyles = makeStyles((theme: Theme) =>
       width: '250px',
       boxShadow: 'none',
       '& > a': {
+        position: 'relative',
         display: 'block',
         width: '100%',
         padding: `${theme.spacing(2)}px ${theme.spacing(5)}px`,
