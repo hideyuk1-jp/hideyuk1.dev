@@ -1,12 +1,14 @@
 import React from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Head from 'next/head';
+import { motion } from 'framer-motion';
+
 import Header from './header';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     main: {
-      '& > section': {
+      '& section': {
         padding: `${theme.spacing(10)}px 0`,
         '&:nth-child(even)': {
           background: theme.palette.background.paper,
@@ -47,7 +49,27 @@ const Layout: React.FunctionComponent<Props> = ({
           githubUrl={githubUrl}
           siteTitleComponent={siteTitleComponent}
         />
-        <main className={classes.main}>{children}</main>
+        <main className={classes.main}>
+          <motion.div
+            animate={{
+              x: 0,
+              opacity: 1,
+            }}
+            initial={{
+              x: 100,
+              opacity: 0,
+            }}
+            exit={{
+              x: -100,
+              opacity: 0,
+            }}
+            transition={{
+              duration: 0.1,
+            }}
+          >
+            {children}
+          </motion.div>
+        </main>
       </div>
     </>
   );
