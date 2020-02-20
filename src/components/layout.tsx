@@ -51,20 +51,19 @@ const Layout: React.FunctionComponent<Props> = ({
         />
         <main className={classes.main}>
           <motion.div
+            initial={{
+              x: -30,
+              opacity: 0,
+            }}
             animate={{
               x: 0,
               opacity: 1,
-            }}
-            initial={{
-              x: 100,
-              opacity: 0,
+              transition: { duration: 0.5, ease: [0.48, 0.15, 0.25, 0.96] },
             }}
             exit={{
-              x: -100,
+              x: 100,
               opacity: 0,
-            }}
-            transition={{
-              duration: 0.1,
+              transition: { duration: 0.2, ease: [0.48, 0.15, 0.25, 0.96] },
             }}
           >
             {children}
