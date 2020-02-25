@@ -45,7 +45,7 @@ const withPost = (meta: Meta) => ({ children }: { children: ReactElement }) => {
   return (
     <Layout title={`Blog - ${meta.title} | hideyuk1.dev`} siteTitleComponent="h3">
       <SocialMeta
-        title={`Blog - ${meta.title} | hideyuk1.dev`}
+        title={`${meta.title} | hideyuk1.dev`}
         url={`https://hideyuk1.dev${meta.url}`}
         image={`${meta.heroImage}`}
       />
