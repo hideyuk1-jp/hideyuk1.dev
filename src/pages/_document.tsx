@@ -22,7 +22,7 @@ export default class MyDocument extends Document {
           <script
             dangerouslySetInnerHTML={{
               __html:
-                '</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:500,700&display=swap" media="print" onload="this.media=\'all\'" /><script>',
+                '</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&display=swap" media="print" onload="this.media=\'all\'" /><script>',
             }}
           />
         </Head>
