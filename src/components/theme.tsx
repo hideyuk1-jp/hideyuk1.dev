@@ -30,7 +30,7 @@ const theme = createMuiTheme({
       'Meiryo',
       'sans-serif',
     ].join(', '),
-    fontWeightRegular: 500,
+    fontWeightRegular: 400,
     button: {
       textTransform: 'none',
     },
