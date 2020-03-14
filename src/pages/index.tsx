@@ -8,7 +8,7 @@ import SocialMeta from '../components/social-meta';
 
 const Index: NextPage = () => {
   return (
-    <Layout title="hideyuk1.dev">
+    <Layout title="hideyuk1.dev | hideyuk1の個人サイト">
       <SocialMeta title="hideyuk1.dev" url="https://hideyuk1.dev" />
       <Hero />
       <Profile />
