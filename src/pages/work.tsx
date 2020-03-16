@@ -39,11 +39,26 @@ const workItems: Array<Work> = [
       <p>
         今いるこのポートフォリオサイト兼ブログです。
         <br />
-        元々はWordPressで作成していましたが、Next.jsを使ったサーバレスの静的サイトとして作り直しました。
+        元々は個人サイトをWordPressで作成していましたが、Next.jsを使ったサーバレスの静的サイトとして新たに作り直しました。
         <br />
         <br />
-        GitHubへpushすると、自動的にAWS
-        CodePipelineでビルド・デプロイされてS3にホスティングされるように設定しています。
+        やっていることは以下の通りです。
+        <br />
+        ・React / Next.js / TypeScriptで静的サイト出力
+        <br />
+        ・UIライブラリにMaterial UI
+        <br />
+        ・ブログ記事はMDXを利用（MarkdownにJSXが書ける）してGit管理
+        <br />
+        ・お問い合わせフォームはAPI Gateway / Lambda / SESのサーバレス構成でメールが届くように設定
+        <br />
+        ・S3でホスティング、キャッシュサーバーにCloudFront
+        <br />
+        ・Route53でドメイン管理し、CloudFrontにルーティング
+        <br />
+        ・ACMでSSL/TLS証明書発行、https化
+        <br />
+        ・GitHubに変更があると、自動的にCodePipelineでビルド・デプロイされるように設定
       </p>
     ),
   },
