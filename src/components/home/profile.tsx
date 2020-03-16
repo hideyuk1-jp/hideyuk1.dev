@@ -251,7 +251,7 @@ const Profile: React.FunctionComponent = () => {
               </div>
               <div className="entry">
                 <div className="header">
-                  <p className="during">2012.09</p>
+                  <p className="during">2005.04 - 2012.09</p>
                   <Typography variant="h3" className="title">
                     大阪大学 情報システム工学科目 中退
                   </Typography>
@@ -259,6 +259,21 @@ const Profile: React.FunctionComponent = () => {
                 <div className="body">
                   <p>
                     4年次まで進級しCSの基礎などを学びましたが、自身で立ち上げたサークルの活動や商売ばかりやっていたら卒業できませんでした。
+                  </p>
+                </div>
+              </div>
+              <div className="entry">
+                <div className="header">
+                  <p className="during">1999.04 - 2005.03</p>
+                  <Typography variant="h3" className="title">
+                    中学・高校時代
+                  </Typography>
+                </div>
+                <div className="body">
+                  <p>
+                    この頃に初めてWeb制作を行いました。
+                    <br />
+                    当時はいわゆるガラケーを使って、ひたすらポチポチして映画が好きだったので映画に関係するモバイル向けサイトを作っていました。
                   </p>
                 </div>
               </div>
