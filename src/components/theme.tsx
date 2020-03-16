@@ -70,6 +70,16 @@ const theme = createMuiTheme({
         'border-radius': '4px',
       },
     },
+    MuiInputBase: {
+      root: {
+        'font-size': 'inherit',
+      },
+    },
+    MuiFormLabel: {
+      root: {
+        'font-size': 'inherit',
+      },
+    },
   },
 });
 
