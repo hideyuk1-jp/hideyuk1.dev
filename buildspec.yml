@@ -10,11 +10,11 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - npm -v
+      - yarn -v
       - node -v
-      - npm install
-      - npm run build
-      - npm run export
+      - yarn install
+      - yarn run build
+      - yarn run export
   post_build:
     commands:
       - echo Build completed on `date`
