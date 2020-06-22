@@ -31,11 +31,14 @@
     "@types/dateformat": "^3.0.1",
     "clsx": "^1.1.0",
     "dateformat": "^3.0.3",
-    "framer-motion": "^1.9.1",
     "next": "^9.4.4",
     "react": "^16.13.0",
+    "react-animations": "^1.0.0",
     "react-dom": "^16.13.0",
-    "rehype-highlight": "^3.1.0"
+    "react-genie": "^0.2.2",
+    "react-genie-styled-components": "^0.1.1",
+    "rehype-highlight": "^3.1.0",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@types/node": "^13.9.1",

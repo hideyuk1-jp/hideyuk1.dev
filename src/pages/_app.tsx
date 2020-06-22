@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import App from 'next/app';
-import { AnimatePresence } from 'framer-motion';
 
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { ReactGenieAnimations } from 'react-genie-styled-components';
 
 import theme from '../components/theme';
 import '../styles/markdown.css';
@@ -27,9 +27,8 @@ export default class MyApp extends App {
         <ThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
-          <AnimatePresence exitBeforeEnter>
-            <Component {...pageProps} key={router.route} />
-          </AnimatePresence>
+          <ReactGenieAnimations />
+          <Component {...pageProps} key={router.route} />
         </ThemeProvider>
       </>
     );

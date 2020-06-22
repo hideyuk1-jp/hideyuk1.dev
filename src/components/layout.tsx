@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Head from 'next/head';
-import { motion } from 'framer-motion';
+import { Reveal } from 'react-genie';
+import { Animation } from 'react-genie-styled-components';
 
 import Header from './header';
 
@@ -49,26 +50,9 @@ const Layout: React.FunctionComponent<Props> = ({
           githubUrl={githubUrl}
           siteTitleComponent={siteTitleComponent}
         />
-        <main className={classes.main}>
-          <motion.div
-            initial={{
-              x: -30,
-              opacity: 0,
-            }}
-            animate={{
-              x: 0,
-              opacity: 1,
-              transition: { duration: 0.5, ease: [0.48, 0.15, 0.25, 0.96] },
-            }}
-            exit={{
-              x: 100,
-              opacity: 0,
-              transition: { duration: 0.2, ease: [0.48, 0.15, 0.25, 0.96] },
-            }}
-          >
-            {children}
-          </motion.div>
-        </main>
+        <Reveal animation={Animation.FadeIn}>
+          <main className={classes.main}>{children}</main>
+        </Reveal>
       </div>
     </>
   );
